@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/dennijo/cartags/svn/!svn/ver/109/app/views/search
+END
+advanced.rss.builder
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/dennijo/cartags/svn/!svn/ver/130/app/views/search/advanced.rss.builder
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dennijo/cartags/svn/!svn/ver/197/app/views/search/index.html.erb
+END
+tag.rss.builder
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/dennijo/cartags/svn/!svn/ver/129/app/views/search/tag.rss.builder
+END
+map.rss.builder
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/dennijo/cartags/svn/!svn/ver/130/app/views/search/map.rss.builder
+END
+index_mobile.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/dennijo/cartags/svn/!svn/ver/144/app/views/search/index_mobile.html.erb
+END
+browse.rss.builder
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/dennijo/cartags/svn/!svn/ver/64/app/views/search/browse.rss.builder
+END
+popular.rss.builder
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/dennijo/cartags/svn/!svn/ver/64/app/views/search/popular.rss.builder
+END

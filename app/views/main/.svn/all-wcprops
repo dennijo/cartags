@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/dennijo/cartags/svn/!svn/ver/108/app/views/main
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/dennijo/cartags/svn/!svn/ver/220/app/views/main/index.html.erb
+END
+_stats.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/dennijo/cartags/svn/!svn/ver/117/app/views/main/_stats.rhtml
+END
+error.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/dennijo/cartags/svn/!svn/ver/52/app/views/main/error.html.erb
+END
+_tag_cloud.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dennijo/cartags/svn/!svn/ver/117/app/views/main/_tag_cloud.rhtml
+END
+_tag_cloud_2.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/dennijo/cartags/svn/!svn/ver/117/app/views/main/_tag_cloud_2.rhtml
+END
+_follow.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/dennijo/cartags/svn/!svn/ver/126/app/views/main/_follow.rhtml
+END
+index_mobile.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/dennijo/cartags/svn/!svn/ver/226/app/views/main/index_mobile.html.erb
+END
+_ads.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/dennijo/cartags/svn/!svn/ver/122/app/views/main/_ads.rhtml
+END

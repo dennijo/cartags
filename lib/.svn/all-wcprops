@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/dennijo/cartags/svn/!svn/ver/106/lib
+END
+post_to_social_networks.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dennijo/cartags/svn/!svn/ver/206/lib/post_to_social_networks.rb
+END
+authentication.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/dennijo/cartags/svn/!svn/ver/51/lib/authentication.rb
+END
+bitly_adapter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/dennijo/cartags/svn/!svn/ver/117/lib/bitly_adapter.rb
+END
+email_to_web.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/dennijo/cartags/svn/!svn/ver/227/lib/email_to_web.rb
+END
+facebook_adapter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/dennijo/cartags/svn/!svn/ver/213/lib/facebook_adapter.rb
+END
+tag_of_the_day.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/dennijo/cartags/svn/!svn/ver/206/lib/tag_of_the_day.rb
+END

@@ -1,0 +1,73 @@
+<div id="advanced_search">
+  <div id="advanced_search_title">
+    <a href="#" onclick='jQuery("#advanced_search_form").toggle("blind",{},500);'>Advanced Search</a>
+  </div>
+  <div id="advanced_search_form" style="<%unless controller.action_name == 'advanced'%>display:none;<%end%>">
+    <%form_tag('/search/advanced',:method=>:get) do -%>
+    <table border="0" cellspacing="1" cellpadding="1">
+      <tr>
+        <th>Title</th>
+        <td><%=text_field_tag :title, params[:title] || params[:query], :class=>"upload_input", :size=>50%></td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td><%=text_field_tag :desc, params[:desc] || params[:query], :class=>"upload_input", :size=>50%></td>
+      </tr>
+      <tr>
+        <th>Categories</th>
+        <td><%=select_tag :tag, '<option value=""></option>'+options_from_collection_for_select(Picture.tag_counts.order('name'), :name, :name,:selected=>params[:tag]), :multiple=>true, :size=>10%></td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td>Within <%=text_field_tag :radius,params[:radius],:class=>"upload_input", :size=>5%> miles of zip <%=text_field_tag :zip,params[:zip],:class=>"upload_input",:size=>5%>
+        </td>
+      </tr>
+      <tr>
+        <th>Uploaded</th>
+        <td>Between <%=text_field_tag :start_date,params[:start_date],:class=>"upload_input",:size=>10%> and <%=text_field_tag :end_date,params[:end_date],:class=>"upload_input",:size=>10%></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <%= submit_tag 'Search', :class=>"button" %>
+        </td>
+      </tr>
+    <%end -%>
+    </table>
+    <a href="#" onclick='jQuery("#advanced_search_form").toggle("blind",{},500);'>Hide Advanced Search</a>
+  </div>
+</div>
+
+<div id="recent">
+  <h2><%if @title%><%=@title%><%end%>
+    <div class="rss_link">
+      <%unless controller.action_name == 'index' || @pictures.nitems == 0%>
+        <%=link_to image_tag("rss.png",:border=>0,:class=>"rss_logo"),{:format=>:rss,:params=>params}%>
+      <%end%>
+    </div>
+  </h2>
+  <%@pictures.each {|p|%>
+  <div class="thumbnail">
+    <div class="thumbnail_title">
+      <%=p.title%>
+    </div>
+    <div class="thumbnail_image">
+      <%=link_to image_tag(p.image.url(:thumb),:border=>0,:alt=>p.description), view_url(:id=>p.guid)%>
+    </div>
+  </div>
+  <%}%>
+</div>
+<div id="paginate">
+  <%= will_paginate @pictures%>
+</div>
+
+<%#=render :partial => 'main/tag_cloud',:locals=>{:tags=>@tags}%>
+<%=render :partial => 'main/ads'%>
+
+<script type="text/javascript">
+	jQuery(function() {
+		jQuery( "#start_date" ).datepicker();
+	});
+	jQuery(function() {
+		jQuery( "#end_date" ).datepicker();
+	});
+</script>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/LICENSE
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/Rakefile
+END
+README.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/README.rdoc
+END
+VERSION
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/VERSION
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/init.rb
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/CHANGELOG
+END
+recaptcha.gemspec
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/recaptcha.gemspec
+END

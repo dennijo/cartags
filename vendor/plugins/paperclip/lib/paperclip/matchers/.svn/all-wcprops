@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/dennijo/cartags/svn/!svn/ver/16/vendor/plugins/paperclip/lib/paperclip/matchers
+END
+validate_attachment_size_matcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/dennijo/cartags/svn/!svn/ver/16/vendor/plugins/paperclip/lib/paperclip/matchers/validate_attachment_size_matcher.rb
+END
+validate_attachment_content_type_matcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/dennijo/cartags/svn/!svn/ver/16/vendor/plugins/paperclip/lib/paperclip/matchers/validate_attachment_content_type_matcher.rb
+END
+have_attached_file_matcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/dennijo/cartags/svn/!svn/ver/16/vendor/plugins/paperclip/lib/paperclip/matchers/have_attached_file_matcher.rb
+END
+validate_attachment_presence_matcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/dennijo/cartags/svn/!svn/ver/16/vendor/plugins/paperclip/lib/paperclip/matchers/validate_attachment_presence_matcher.rb
+END

@@ -1,0 +1,86 @@
+<div id="recent">
+  <h3>Tags Near <%=@city%>, <%=@state%></h3>
+  <%@close_pictures.each {|p|%>
+  <div class="thumbnail">
+    <div class="thumbnail_title">
+      <%=p.title%>
+    </div>
+    <div class="thumbnail_image">
+      <%=link_to image_tag(p.image.url(:thumb),:border=>0,:alt=>p.description), view_url(:id=>p.guid)%>      
+    </div>
+  </div>
+  <%}%>
+  <%if @close_pictures.nitems == 0%>
+    <center>
+      No tags near you?  Be the first to upload one.  It's easy. Just:
+      <%=link_to image_tag('fb-login-button.png',:border=>0),:controller=>:user,:action=>:login%> and upload a tag.
+    </center>
+  <%end%>
+  <br clear="all"/>
+
+  <div style="width:100%;border-top:1px solid #ccc;margin:5px;"></div>
+  <h3>Recent Tags</h3>
+  <%@recent_pictures.each {|p|%>
+  <div class="thumbnail">
+    <div class="thumbnail_title">
+      <%=p.title%>
+    </div>
+    <div class="thumbnail_image">
+      <%=link_to image_tag(p.image.url(:thumb),:border=>0,:alt=>p.description), view_url(:id=>p.guid)%>
+    </div>
+  </div>
+  <%}%>
+  <br clear="all"/>
+  <%if @total_pictures > @recent_pictures.nitems%>
+    <div style="float:right;"><%=link_to "See More ..",{:controller=>:search,:action=>:browse}%></div>
+  <%end%>
+  <br clear="all"/>
+  <div style="width:100%;border-top:1px solid #ccc;margin:5px;"></div>
+  <h3>Tags</h3>
+  <%@random_pictures.each {|p|%>
+  <div class="thumbnail">
+    <div class="thumbnail_title">
+      <%=p.title%>
+    </div>
+    <div class="thumbnail_image">
+      <%=link_to image_tag(p.image.url(:thumb),:border=>0,:alt=>p.description), view_url(:id=>p.guid)%>
+    </div>
+  </div>
+  <%}%>
+  <br clear="all"/>
+  <%if @total_pictures > @random_pictures.nitems%>
+    <div style="float:right;"><%=link_to "See More ..",{:controller=>:search,:action=>:popular}%></div>
+  <%end%>
+  <br clear="all"/>
+</div>
+
+<%#=render :partial => 'main/tag_cloud',:locals=>{:tags=>@tags}%>
+<%=render :partial => 'main/stats'%>
+<%=render :partial => 'main/ads'%>
+<%=render :partial => 'main/follow'%>
+
+<%unless session[:layout]=="mobile"%>
+  <%content_for :head do -%>
+    <%= javascript_include_tag 'FusionMaps' %>
+  <%end%>
+
+  <%content_for :mapdiv do -%>
+    <div id="mapdiv"></div>
+  <%end -%>
+  <%content_for :mapheader do -%>
+    <div id="mapheader">
+      <h2>Tags by State</h2>
+    </div>
+  <%end -%>
+
+
+  <script type="text/javascript">
+      jQuery(document).ready(function() {
+        var map = new FusionMaps("/maps/FCMap_USA.swf", "Map1Id", "290", "200", "0", "0");
+        map.setDataXML("<%=get_map_xml(@st,@hits,0)%>");
+        map.setTransparent();
+        map.render("mapdiv");
+      });
+  </script>
+
+<%end%>

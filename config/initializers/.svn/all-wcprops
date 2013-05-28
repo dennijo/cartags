@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/dennijo/cartags/svn/!svn/ver/41/config/initializers
+END
+inflections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/dennijo/cartags/svn/!svn/ver/3/config/initializers/inflections.rb
+END
+session_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/dennijo/cartags/svn/!svn/ver/3/config/initializers/session_store.rb
+END
+backtrace_silencers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/dennijo/cartags/svn/!svn/ver/3/config/initializers/backtrace_silencers.rb
+END
+geokit_config.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/dennijo/cartags/svn/!svn/ver/41/config/initializers/geokit_config.rb
+END
+new_rails_defaults.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/dennijo/cartags/svn/!svn/ver/3/config/initializers/new_rails_defaults.rb
+END
+mime_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dennijo/cartags/svn/!svn/ver/3/config/initializers/mime_types.rb
+END

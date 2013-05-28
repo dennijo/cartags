@@ -1,0 +1,10 @@
+<% form_remote_tag :url => {:action=>:submit} do -%>
+   <%=hidden_field_tag 'picture_id',params[:id]%>
+   <%=label_tag 'Message: '%><%= text_area_tag 'message',nil,{:cols=>40,:rows=>5} %>
+   <br/>
+   <%=label_tag 'Post to Facebook?'%><%=check_box_tag 'post_to_fb','true',true%>
+   <br/>
+   <%=label_tag 'Post to Twitter?'%><%=check_box_tag 'post_to_tw','true',true%>
+   <br/>
+   <%= submit_tag 'Post to Social Networks', :class=>"button" %>
+ <% end -%>

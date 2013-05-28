@@ -1,0 +1,33 @@
+<div id="contact">
+<h2>Contact Us</h2>
+<%
+key = "6LdKtLwSAAAAAPlLiR7A-myM36cD72eEfp7Eyfb3"
+%>
+
+<form action="<%=url_for(:action=>:submit)%>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+  <p>Please use the form below to contact us.</p>
+  <p class="label">Name</p>
+  <input name="name" type="text" class="contact_input" id="name" value="<%=params[:name]%>"/>
+  <p class="label">E-Mail</p>
+  <input name="email" type="text" class="contact_input" id="email" value="<%=params[:email]%>"/>
+  <p class="label">Subject</p>
+  <input name="subject" type="text" class="contact_input" id="subject" value="<%=params[:subject]%>"/>
+  <p class="label">Message</p>
+  <textarea name="message" cols="6" rows="5" class="contact_input" id="message"><%=params[:message]%></textarea>
+  <p class="label">Human Check</p>
+
+<script type="text/javascript">
+    var RecaptchaOptions = {
+        theme : "white"
+    };
+</script>
+<%= recaptcha_tags %>
+
+    <label>
+    <br />
+    <input type="submit" name="Submit" id="button" class="button" value="Submit" />
+    </label>
+  </p>
+</form>
+</div>

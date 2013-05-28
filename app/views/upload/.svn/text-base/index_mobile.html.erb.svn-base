@@ -1,0 +1,10 @@
+<div id="mobile_upload_form">
+    <h3>Upload via email</h3>
+    Send your photos to:
+    <div class="highlight" id="unique_email"><%=@user.unique_email%></div>
+    <center>
+      <%=link_to_remote 'Reset email address',:url=>{:controller=>:user,:action=>:reset_unique_email},:update=>"unique_email"%>
+    </center>
+    <br/><b>Subject</b> of the email should be the tag characters<br/>
+    <b>Body</b> of the email can be used to provide a description
+</div>

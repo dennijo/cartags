@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/lib/recaptcha
+END
+client_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/lib/recaptcha/client_helper.rb
+END
+verify.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/lib/recaptcha/verify.rb
+END
+merb.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/lib/recaptcha/merb.rb
+END
+rails.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/lib/recaptcha/rails.rb
+END

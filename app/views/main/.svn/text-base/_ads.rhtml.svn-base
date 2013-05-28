@@ -1,0 +1,33 @@
+<% content_for :ads do -%>
+  <%unless session[:layout] == "mobile"%>
+    <div id="ads">
+      <script type="text/javascript"><!--
+        google_ad_client = "pub-7980083195875088";
+        /* 300x250, created 9/27/10 */
+        google_ad_slot = "1289029340";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+      </script>
+      <script type="text/javascript"src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    </div>
+  <%else%>
+    <script type="text/javascript"><!--
+      window.googleAfmcRequest = {
+        client: 'ca-mb-pub-7980083195875088',
+        ad_type: 'text_image',
+        output: 'html',
+        channel: '',
+        format: '320x50_mb',
+        oe: 'utf8',
+        color_border: '336699',
+        color_bg: 'FFFFFF',
+        color_link: '0000FF',
+        color_text: '000000',
+        color_url: '008000'
+      };
+    //--></script>
+    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_afmc_ads.js"></script>
+  <%end%>
+<%end -%>
+

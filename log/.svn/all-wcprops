@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/dennijo/cartags/svn/!svn/ver/109/log
+END
+test.log
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/dennijo/cartags/svn/!svn/ver/3/log/test.log
+END
+development.log
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/dennijo/cartags/svn/!svn/ver/218/log/development.log
+END
+production.log
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/dennijo/cartags/svn/!svn/ver/3/log/production.log
+END
+server.log
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/dennijo/cartags/svn/!svn/ver/3/log/server.log
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/test
+END
+verify_recaptcha_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/test/verify_recaptcha_test.rb
+END
+recaptcha_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/dennijo/cartags/svn/!svn/ver/3/vendor/plugins/recaptcha/test/recaptcha_test.rb
+END

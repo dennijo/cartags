@@ -1,0 +1,3 @@
+<span id='make_tod'>
+  <%= link_to_remote('Make ToD', :update=>'make_tod',:url=>{:controller=>:picture,:action=>:force_tod,:id=>picture.id},:confirm=>'Are you sure you want to make this the Tag of the Day?',:html=>{:class=>'button'}) %>
+</span>

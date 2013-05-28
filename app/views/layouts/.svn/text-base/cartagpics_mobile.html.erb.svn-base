@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="XlQWU5j8mpoTWW27ytDzj-17-zJkCk_WiF0VVkAej4U" />
+    <META name="y_key" content="72ef18483089cdf0">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <title>CarTagPics : Every tag has a story</title>
+    <link REL="SHORTCUT ICON" HREF="<%=url_for('/images/cartagpics_logo.png')%>" />
+    <%= stylesheet_link_tag 'cartagpics.css' %>
+    <%= stylesheet_link_tag 'jquery-ui-1.8.4' %>
+    <%= ajaxful_rating_style %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'jquery-1.4.2.min' %>
+    <%= javascript_include_tag 'jquery-ui-1.8.4.min' %>
+    <%= javascript_include_tag 'jquery.validate.min' %>
+    <%= javascript_include_tag 'jquery.timeago' %>
+    <%= yield(:jstemplates) -%>
+    <%= yield :head -%>
+    <script type="text/javascript">
+        $.noConflict();
+    </script>
+  </head>
+<body style="font-size:10px;">
+    <div id="main">
+      <div id="header" style="width:100%;height:30px;">
+        <div id="topmenu">
+          <div id="logo" style="width:auto;">
+            <%=link_to "CarTagPics", {:controller=>:main}, :class=>"mobile_logo"%>
+            <br/><p class="slogan" style="font-size:80%;">Every tag has a story</p>
+          </div>
+          <div id="search" style="margin-top: 5px;">
+            <div style="float:left;">
+              <form action="<%=url_for(:controller=>:search)%>" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+                <input type="text" id="search_query" name="query" class="searchinput" value="Search" onFocus="this.value='';this.style.color='black';" style="width:60px;font-size:12px;padding:0px;"></input>
+                &nbsp;&nbsp;<%=link_to "Browse",:controller=>:search,:action=>:browse%>
+              </form>
+            </div>
+          </div>
+          <div id="user" style="margin-top: 8px;">
+            <%unless session[:user_id]%>
+              <%=link_to "Login",:controller=>:user,:action=>:login%>
+            <%else%>
+              <%=link_to "Upload",:controller=>:upload%>|
+              <%=link_to "My Tags",:controller=>:user,:action=>:tags%>|
+              <%=link_to "Logout",:controller=>:user,:action=>:logout%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+      <br clear="all"/>
+      <div id="notices">
+            <% if flash[:error] then %>
+            <div id="error">
+              <div style="float:right;">
+                <%= link_to_function("<img src=\"/images/close.png\" width=\"16\" height=\"16\" border=\"0\">", "hideDiv('error');") %>
+              </div>
+              <%=flash[:error]%>
+            </div>
+            <% end %>
+            <% if flash[:info] then %>
+            <div id="info">
+              <div style="float:right;">
+                <%= link_to_function("<img src=\"/images/close.png\" width=\"16\" height=\"16\" border=\"0\">", "hideDiv('info');") %>
+              </div>
+              <%=flash[:info]%>
+            </div>
+            <% end %>
+            <% if flash[:warning] then %>
+            <div id="warning">
+              <div style="float:right;">
+                <%= link_to_function("<img src=\"/images/close.png\" width=\"16\" height=\"16\" border=\"0\">", "hideDiv('warning');") %>
+              </div>
+              <%=flash[:warning]%>
+            </div>
+            <% end %>
+            <% if flash[:success] then %>
+            <div id="success">
+              <div style="float:right;">
+                <%= link_to_function("<img src=\"/images/close.png\" width=\"16\" height=\"16\" border=\"0\">", "hideDiv('success');") %>
+              </div>
+              <%=flash[:success]%>
+            </div>
+            <% end %>
+      </div>
+      <div id="maincontent" style="width:100%;">
+        <div id="content" style="width: 100%;">
+          <%= yield :ads -%>
+          <%= yield %>
+        </div>
+        <br clear="all" />
+        <div id="footer" style="width: 100%;">
+          <div id="footer_links">
+            <%= link_to "Web Version", :controller=>:main, :action=>:set_layout %>
+            &nbsp;|&nbsp;<%=link_to "About", :controller=>:about%>
+            &nbsp;|&nbsp;<%=link_to "Terms", :controller=>:terms%>
+            &nbsp;|&nbsp;<%=link_to "Privacy", :controller=>:privacy%>
+            &nbsp;|&nbsp;<%=link_to "FAQ", :controller=>:faq%>
+            &nbsp;|&nbsp;<%=link_to "Contact", :controller=>:contact%>
+          </div>
+          <div id="copyright" style="width:35%;">
+            &copy;<%=Time.now.year%> CarTagPics, LLC.<br/>All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        jQuery("abbr.timeago").timeago();
+      });
+    </script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-18350159-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>
+
+<%
+    #for some reason flash notices weren't being destroyed correctly.
+    flash[:error] = nil
+    flash[:warning] = nil
+    flash[:validation] = nil
+    flash[:info] = nil
+    flash[:success] = nil
+%>

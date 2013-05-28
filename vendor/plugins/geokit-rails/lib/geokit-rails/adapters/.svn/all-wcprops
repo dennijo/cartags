@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/adapters
+END
+abstract.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/adapters/abstract.rb
+END
+postgresql.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/adapters/postgresql.rb
+END
+mysql.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/adapters/mysql.rb
+END
+sqlserver.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/adapters/sqlserver.rb
+END

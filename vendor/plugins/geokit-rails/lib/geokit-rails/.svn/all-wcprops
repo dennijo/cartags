@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails
+END
+acts_as_mappable.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/acts_as_mappable.rb
+END
+ip_geocode_lookup.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/ip_geocode_lookup.rb
+END
+defaults.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/defaults.rb
+END
+geocoder_control.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/lib/geokit-rails/geocoder_control.rb
+END

@@ -1,0 +1,9 @@
+<div class="tag_cloud">
+  <% content_for :tag_cloud do -%>
+    <% tag_cloud(tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+      <%unless css_class == 'css1'  %>
+        <%= link_to tag.name, { :controller=>:search,:action => :tag, :id => tag.name }, :class => css_class %>
+      <%end%>
+    <%end%>
+  <%end -%>
+</div>

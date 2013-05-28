@@ -1,0 +1,75 @@
+class EmailToWeb
+  require 'net/pop'
+  require 'tmail'
+  
+  def initialize
+
+  end
+
+  def perform
+    username = "pictures"
+    password = "C@p1tu5v"
+    host = "localhost"
+    Net::POP3.start("localhost", nil, username, password) do |pop|
+      if pop.mails.empty?
+        puts "No mail.\n"
+      else
+        pop.mails.each do |email|
+          begin
+            mymail = TMail::Mail.parse(email.pop)
+            from = mymail.from[0]
+            to = mymail.to[0]
+            user = User.find_by_unique_email to
+            unless user
+              email.delete
+              next
+            end
+            subject = mymail.subject
+            body = mymail.body
+            sent_on = mymail.date
+            unless mymail.attachments.blank?
+              tmp_file = "/tmp/"+rand(999999999).to_s+mymail.attachments.first.original_filename
+              File.open(tmp_file,"w+") { |local_file|
+                local_file << mymail.attachments.first.read
+              }
+            else
+              email.delete
+              next
+            end
+            body = body.gsub("Attachment: #{mymail.attachments.first.original_filename}",'')
+            body = body.gsub("attachment: #{mymail.attachments.first.original_filename}",'')
+            body = body.gsub("Attached: #{mymail.attachments.first.original_filename}",'')
+            body = body.gsub("attached: #{mymail.attachments.first.original_filename}",'')
+
+            email.delete
+
+            picture = Picture.new
+            picture.description = body
+            picture.title = subject
+            picture.image = File.open(tmp_file)
+            picture.user_id = user.id
+            picture.save
+
+            pic = Picture.find(picture.id)
+            FileUtils.chown_R 'nobody', 'nobody', "#{RAILS_ROOT}/public/system/images/#{pic.id}"
+            #pic.auto_orient
+            #if user.fb_access_token
+            #  pic.post_to_fb
+            #end
+
+            if tmp_file
+              File.delete(tmp_file)
+              tmp_file = nil
+            end
+          rescue Exception => e
+            puts "Error receiving email at " + Time.now.to_s + "::: " + e.message + "\n"
+          end
+        end
+      end
+      puts "Done handling pictures from email\n"
+    end
+    nextrun = 2.minutes.from_now.getutc
+    Delayed::Job.enqueue EmailToWeb.new(),20,nextrun
+  end
+
+end

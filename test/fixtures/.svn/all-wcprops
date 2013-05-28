@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/dennijo/cartags/svn/!svn/ver/3/test/fixtures
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/dennijo/cartags/svn/!svn/ver/3/test/fixtures/users.yml
+END
+profiles.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/dennijo/cartags/svn/!svn/ver/3/test/fixtures/profiles.yml
+END
+sources.yml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/dennijo/cartags/svn/!svn/ver/3/test/fixtures/sources.yml
+END
+comments.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/dennijo/cartags/svn/!svn/ver/3/test/fixtures/comments.yml
+END
+pictures.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/dennijo/cartags/svn/!svn/ver/3/test/fixtures/pictures.yml
+END

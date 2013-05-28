@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models
+END
+mock_organization.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/mock_organization.rb
+END
+mock_address.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/mock_address.rb
+END
+mock_person.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/mock_person.rb
+END
+custom_location.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/custom_location.rb
+END
+company.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/company.rb
+END
+location.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/location.rb
+END
+mock_family.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/mock_family.rb
+END
+mock_house.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/mock_house.rb
+END
+store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/models/store.rb
+END

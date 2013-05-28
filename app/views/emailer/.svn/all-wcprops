@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/dennijo/cartags/svn/!svn/ver/74/app/views/emailer
+END
+contact.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dennijo/cartags/svn/!svn/ver/150/app/views/emailer/contact.rhtml
+END
+welcome.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dennijo/cartags/svn/!svn/ver/200/app/views/emailer/welcome.rhtml
+END
+test.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/dennijo/cartags/svn/!svn/ver/150/app/views/emailer/test.rhtml
+END
+comment.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dennijo/cartags/svn/!svn/ver/150/app/views/emailer/comment.rhtml
+END
+upload.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dennijo/cartags/svn/!svn/ver/150/app/views/emailer/upload.rhtml
+END
+comment_cc.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/dennijo/cartags/svn/!svn/ver/150/app/views/emailer/comment_cc.rhtml
+END
+new_user.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/dennijo/cartags/svn/!svn/ver/213/app/views/emailer/new_user.rhtml
+END
+error.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/dennijo/cartags/svn/!svn/ver/152/app/views/emailer/error.rhtml
+END

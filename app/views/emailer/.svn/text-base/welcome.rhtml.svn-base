@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"  />
+  </head>
+  <body>
+    <img src="http://www.cartagpics.com/images/cartagpics_logo.png" width="70"></img><br/>
+      Welcome <%=@user.profile.first_name%> <%=@user.profile.last_name%> to <a href="http://www.cartagpics.com">CarTagPics</a>!
+      <br/><br/>
+      We are excited you decided to visit & see what all the hype is about.  Whether you're a fan of cars, art, photography or just into collecting things, <a href="http://www.cartagpics.com">CarTagPics</a> has something for you.
+      <br/><br/>
+      In just minutes you can go from viewing our <a href="http://www.cartagpics.com/search/browse">online gallery</a> of tags to posting your own & sharing them with your friends! Periodically we will have contests for you to enter & special prizes will be awarded. Stay updated with our newsletter highlighting our users & stories found in their collections.  Watch for the "Tag of the Day" post on our <a href="http://www.facebook.com/pages/CarTagPics/148248548547708">Facebook fan page</a> & Twitter <a href="http://twitter.com/CarTagPics">@CarTagPics</a> pages daily.
+      <br/><br/>
+      If you need help learning how to use the site we have videos posted to assist you on our <a href="http://www.cartagpics.com/faq">FAQ page</a> & the <a href="http://www.cartagpics.com/upload">upload page</a>.
+      <br/><br/>
+      If you have any additional questions or suggestions you want to share, please <a href="http://www.cartagpics.com/contact">contact us</a>.
+      <br/><br/>
+      Thanks again for joining in the fun, & Happy Hunting!
+      <br/><br/>
+      -CarTagPics TEAM
+      <br/>"Every Tag Has A Story"
+  </body>
+</html>
+

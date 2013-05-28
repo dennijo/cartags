@@ -1,0 +1,256 @@
+<%content_for :head do -%>
+  <%=javascript_include_tag 'jquery.jeditable.mini'%>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<%end -%>
+
+<div id="picture_title">
+  <%unless @picture.user_id == session[:user_id]%>
+    <%=@picture.title%>
+  <%else%>
+    <div class="edit_title" id="<%=@picture.guid%>"><%=@picture.title%></div>
+  <%end%>
+  <div style="float:right;">
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+      <a class="addthis_button_tweet"></a>
+      <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=dennijo" class="addthis_button_compact">Share</a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=dennijo"></script>
+    <!-- AddThis Button END -->
+  </div>
+</div>
+<div id="picture" style="height:<%=@height%>px;margin-left:auto;margin-right:auto;">
+  <%=image_tag @picture.image.url(:large), :width=>@width-10,:height=>@height-10,:alt=>@picture.description%>
+</div>
+<div id="picture_info">
+  <div style="float: left;">
+    <img src="http://graph.facebook.com/<%=@picture.user.external_id%>/picture"></img>
+  </div>
+  <div style="float: left; margin-left: 3px;">
+    Posted <%=timeago(@picture.created_at)%><br />
+    by <%=link_to "#{@picture.user.profile.first_name} #{@picture.user.profile.last_name}", {:controller=>:user,:action=>:view,:id=>@picture.user.external_id}%><br />
+    <%=number_with_delimiter @picture.views%> <%= @picture.views > 1 ? "views" : "view"%><br />
+
+  </div><br clear="all" />
+  <%= ratings_for @picture%>
+  <%shown = 0%>
+<div id="similar" style="width:98%;">
+  <div class="header">Related Tags</div>
+  <%@other_pictures.each {|p|%>
+    <% unless shown >= @limit || p.guid == @picture.guid%>
+      <div class="small_thumbnail">
+        <div class="thumbnail_title">
+          <%=p.title%>
+        </div>
+        <div class="small_thumbnail_image">
+          <%=link_to image_tag(p.image.url(:thumb),:border=>0,:alt=>p.description,:height=>100,:width=>100), view_url(:id=>p.guid)%>
+        </div>
+      </div>
+      <% shown+=1 %>
+    <%end%>
+  <%}%>
+</div>
+</div>
+<%if session[:superuser]%>
+  <div id="actions">
+    <div class="header" style="margin-bottom:5px;">Admin</div>
+    <div class="action_button">
+      <%if session[:user_id] == @picture.user_id %>
+        <%=link_to "Stop Admin",{:controller=>:user,:action=>:admin,:id=>@picture.id},:class=>"button"%>
+      <%else%>
+        <%=link_to "Admin",{:controller=>:user,:action=>:admin,:id=>@picture.id},:class=>"button"%>
+      <%end%>
+    </div>
+    <div class="action_button">
+        <span id="make_tod">
+          <%unless @picture.tod?%>
+            <%=render :partial => 'picture/make_tod',:locals=>{:picture=>@picture}%>
+          <%else%>
+            <%=render :partial => 'picture/cancel_tod',:locals=>{:picture=>@picture}%>
+          <%end%>
+        </span>
+    </div>
+    <div class="action_button">
+        <span id="post_to_social">
+          <%=link_to "Post to FB/TW", { :controller=>:social,:id=>@picture.id }, :class=>"button",:popup => ['socialize', 'height=300,width=600']%>
+        </span>
+    </div>
+  </div>
+<%end%>
+<%if @picture.user.id == session[:user_id] %>
+<div id="actions">
+  <div class="header" style="margin-bottom:5px;">Actions</div>
+  <div class="action_button">
+    <%=link_to "Rotate",{:controller=>:picture,:action=>:rotate,:id=>@picture.guid},:class=>"button"%>
+  </div>
+  <div class="action_button">
+    <%=link_to "Delete",{:controller=>:picture,:action=>:delete,:id=>@picture.guid},:confirm=>"Are you sure you want to delete this?  This is a permanent action.",:class=>"button"%>
+  </div>
+</div>
+<%end%>
+<div id="tags">
+  <div class="header">Categories</div>
+  <%unless @picture.user_id == session[:user_id]%>
+    <%=@picture.tag_list%>
+  <%else%>
+  <div class="edit_tags" id="<%=@picture.guid%>"><%=@picture.tag_list%></div>
+  <%end%>
+</div>
+<div id="description">
+  <div class="header">Description</div>
+  <%unless @picture.user_id == session[:user_id]%>
+    <%=@picture.description.gsub("\n","<br />")%>
+  <%else%>
+    <div class="edit_description" id="<%=@picture.guid%>"><%=@picture.description.gsub("\n","<br />")%></div>
+  <%end%>
+</div>
+
+<%if session[:user_id]%>
+<div id="add_comment">
+  <% form_for :comment, @comment, :url=>url_for(:controller=>:comment,:action=>:create), :html => { :multipart => false } do |form| %>
+    <%=form.hidden_field :picture_id, :value => @picture.id%>
+    <%=form.hidden_field :user_id, :value=>session[:user_id]%>
+    <%=form.text_area :comment, :rows=>5, :cols=>66%>
+    <%=form.submit "Add Comment",:class=>"button"%>
+  <% end %>
+</div>
+<%else%>
+<div id="add_comment">
+  <%5.times do |x|%>
+  <br/>
+  <%end%>
+  <center>
+  <%=link_to image_tag('fb-login-button.png',:border=>0),:controller=>:user,:action=>:login, :pic=>@picture.guid%> to post a comment
+  </center>
+</div>
+<%end%>
+<div id="comments">
+  <%if @picture.comment.nitems > 1 || @picture.comment.nitems == 0%>
+    <h3><%=number_with_delimiter @picture.comment.nitems%> Comments</h3>
+  <%else%>
+    <h3><%=number_with_delimiter @picture.comment.nitems%> Comment</h3>
+  <%end%>
+  <%
+  @picture.comment.each {|c|
+  %>
+    <div class="comment">
+      <%=image_tag "http://graph.facebook.com/#{c.user.external_id}/picture", :border=>0,:height=>48,:width=>48%>
+      <div class="comment_text">
+        <%=link_to "#{c.user.profile.first_name} #{c.user.profile.last_name}",c.user.profile.profile_url,:target=>"_new"%> <%=timeago(c.created_at)%><br/>
+        <%=c.comment.gsub("\n",'<br/>')%>
+      </div>
+      <%if @picture.user.id == session[:user_id] %>
+          <div class="action_button" style="float:right;height:20px;">
+            <%=link_to "Delete",{:controller=>:comment,:action=>:delete,:id=>c.id},:confirm=>"Are you sure you want to delete this comment?  This is a permanent action.",:class=>"button"%>
+          </div>
+      <%end%>
+    </div>
+  <%
+  }
+  %>
+</div>
+
+<%#=render :partial => 'main/tag_cloud',:locals=>{:tags=>@tags}%>
+<%#=render :partial => 'main/tag_cloud_2',:locals=>{:tags=>@tags2}%>
+<%=render :partial => 'main/ads'%>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js?username=dennijo"></script>
+
+<%if @picture.user_id == session[:user_id]%>
+<script type="text/javascript">
+ jQuery(document).ready(function() {
+     jQuery('.edit_title').editable('<%=url_for :action=>:edit_title%>', {
+         indicator : 'Saving...',
+         tooltip   : 'Click to edit...',
+         style     : 'display: inline',
+         height    : '2'
+     });
+     jQuery('.edit_tags').editable('<%=url_for :action=>:edit_tags%>', {
+         indicator : 'Saving...',
+         tooltip   : 'Click to edit...',
+         style     : 'display: inline',
+         height    : '2'
+     });
+     jQuery('.edit_description').editable('<%=url_for :action=>:edit_description%>', {
+         indicator : 'Saving...',
+         tooltip   : 'Click to edit...',
+         style     : 'display: inline',
+         height    : '2',
+         type      : 'textarea',
+         cols      : '60',
+         rows      : '10',
+         cancel    : 'Cancel',
+         submit    : 'Save'
+     });
+ });
+ </script>
+<%end%>
+
+<%if @picture.latitude && @picture.longitude%>
+  <script type="text/javascript">
+    var map;
+    var pic_title = '<%=@picture.title.gsub("\n",' ').gsub("\r",'').gsub('"','').gsub("'","")%>';
+    var pic_desc = '<%=@picture.description.gsub("\n",' ').gsub("\r",'').gsub('"','').gsub("'","")%>';
+    var marker=false;
+    function initialize() {
+      var myLatlng = new google.maps.LatLng(<%=@picture.latitude%>,<%=@picture.longitude%>);
+
+      var myOptions = {
+        zoom: <%=@zoom%>,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+      map = new google.maps.Map(document.getElementById("right_gmap"), myOptions);
+
+      <% if @zoom > 2 || session[:user_id] == @picture.user_id%>
+      marker = new google.maps.Marker({
+        	position: myLatlng,
+        	map: map,
+                title: pic_title+':'+pic_desc
+  	});
+      <%end%>
+     <% if @picture.user_id == session[:user_id] %>
+      google.maps.event.addListener(map, 'center_changed', function() {
+  	var location = map.getCenter();
+        //alert(location.lat());
+	document.getElementById("picture_latitude").value = location.lat();
+	document.getElementById("picture_longitude").value = location.lng();
+        placeMarker(location);
+      });
+     <%end%>
+
+    }
+
+    function placeMarker(location) {
+      var clickedLocation = new google.maps.LatLng(location);
+      marker.setPosition(location);
+    }
+    
+    window.onload = function(){initialize();};
+
+  </script>
+<%end%>
+
+<%content_for :right_gmap do -%>
+  <div id="right_gmap"></div>
+<%end -%>
+
+<%if (@picture.user_id == session[:user_id])%>
+  <%content_for :right_gmap_action do -%>
+    <div id="right_gmap_action">
+      <p class="hint">Double click on the map to move the location of this tag.  Then click on the "Update Tag Location" button below.</p>
+      <% form_remote_tag :url => {:controller => :picture, :action => :update_location},
+:html => {:action => {:controller => :picture, :action => :update_location, :id => @picture.guid}} do %>
+        <%= hidden_field :picture,'latitude', :value=>'' %>
+        <%= hidden_field :picture,'longitude', :value=>'' %>
+        <%= hidden_field :picture,'id', :value=>@picture.guid %>
+        <center>
+          <%= submit_tag 'Update Tag Location',:class=>"button" -%>
+        </center>
+      <% end %>
+    </div>
+    <%end -%>
+<%end%>

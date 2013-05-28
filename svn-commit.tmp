@@ -1,0 +1,7 @@
+
+--This line, and those below, will be ignored--
+
+M    app/models/picture.rb
+M    app/controllers/user_controller.rb
+M    log/development.log
+M    lib/tag_of_the_day.rb

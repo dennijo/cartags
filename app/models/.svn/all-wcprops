@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/dennijo/cartags/svn/!svn/ver/108/app/models
+END
+emailer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/dennijo/cartags/svn/!svn/ver/213/app/models/emailer.rb
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/dennijo/cartags/svn/!svn/ver/213/app/models/user.rb
+END
+profile.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/dennijo/cartags/svn/!svn/ver/135/app/models/profile.rb
+END
+source.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/dennijo/cartags/svn/!svn/ver/3/app/models/source.rb
+END
+comment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/dennijo/cartags/svn/!svn/ver/3/app/models/comment.rb
+END
+picture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/dennijo/cartags/svn/!svn/ver/228/app/models/picture.rb
+END
+tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/dennijo/cartags/svn/!svn/ver/3/app/models/tag.rb
+END
+rate.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/dennijo/cartags/svn/!svn/ver/51/app/models/rate.rb
+END

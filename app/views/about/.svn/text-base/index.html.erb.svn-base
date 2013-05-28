@@ -1,0 +1,8 @@
+<h2>Welcome to <%=link_to "CarTagPics.Com",:controller=>:main%>, where every tag has a story!</h2>
+We are glad you stopped in to visit!  Our mission here at <%=link_to "CarTagPics.Com",:controller=>:main%> is simple.  We are THE online place for everything related to car tags. Did you know there are over 250 million cars registered in the United States alone?
+<!--<br/><br/>Click here to read how it all got started-->
+<br/><br/>What about you? Have you ever been stuck in traffic and seen a tag that made you laugh, blush, scream or wonder? Perhaps you have a vanity license plate that you want to post for others to see?   Well now, armed with your cell phone, you can share that tag with the world!
+<br/><br/>It’s simple & FREE! Just <%=link_to "log in", :controller=>:login%> using your facebook account, and upload your plate in seconds!  Once your tag is uploaded your friends and billions worldwide will be able to add comments to your tag! You can even share it via twitter, email & more!
+<br/<br/><%=link_to "Browse",:controller=>:search, :action=>:browse%> license plates by keywords, tags, interest, even your name!
+<br/><br/>We hope you enjoy the site, and spread the Word by telling your friends. Make it a family event by taking pictures of tags you see on vacation. The options are endless!
+<br/><br/>Every Tag has a story.

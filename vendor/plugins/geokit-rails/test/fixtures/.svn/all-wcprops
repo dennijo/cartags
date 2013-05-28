@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures
+END
+mock_houses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/mock_houses.yml
+END
+stores.yml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/stores.yml
+END
+mock_organizations.yml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/mock_organizations.yml
+END
+mock_families.yml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/mock_families.yml
+END
+custom_locations.yml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/custom_locations.yml
+END
+mock_addresses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/mock_addresses.yml
+END
+locations.yml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/locations.yml
+END
+mock_people.yml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/mock_people.yml
+END
+companies.yml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/dennijo/cartags/svn/!svn/ver/41/vendor/plugins/geokit-rails/test/fixtures/companies.yml
+END

@@ -1,0 +1,50 @@
+<%content_for :head do -%>
+  <%=javascript_include_tag 'jquery.lightbox-0.5.min'%>
+  <%=stylesheet_link_tag 'jquery.lightbox-0.5'%>
+<%end -%>
+<div id="recent">
+  <div class="user_profile">
+    <div style="float: left;">
+      <a href="http://www.facebook.com/profile.php?id=<%=@pictures.first.user.external_id%>" target="_new">
+      <img src="http://graph.facebook.com/<%=@pictures.first.user.external_id%>/picture"></img>
+      </a>
+    </div>
+    <div style="float: left; margin-left: 3px; width:90%;">
+      <div class="rss_link"><%=link_to image_tag("rss.png",:border=>0,:class=>"rss_logo"),{:action=>:view,:id=>@pictures.first.user.external_id,:format=>:rss}%></div>
+      <%=link_to "#{@pictures.first.user.profile.first_name} #{@pictures.first.user.profile.last_name}", "http://www.facebook.com/profile.php?id=#{@pictures.first.user.external_id}",:target=>"_new"%><br />
+      <%= number_with_delimiter @total_tags %> <%= @total_tags > 1 ? "tags" : "tag"%> <br/>
+    </div>
+  </div>
+  <br clear="all"/>
+  <%@pictures.each {|p|%>
+  <div class="thumbnail">
+    <div class="thumbnail_title">
+      <%=p.title%>
+    </div>
+    <div class="thumbnail_image">
+      <%=link_to image_tag(p.image.url(:thumb),:border=>0,:alt=>p.description), p.image.url(:large),:class=>:lightbox,:title=>"#{p.title} <BR/> #{p.description} <BR/> #{link_to "View Details and Comments", view_url(:id=>p.guid)}"%>
+    </div>
+  </div>
+  <%}%>
+</div>
+<div id="paginate">
+  <%= will_paginate @pictures%>
+</div>
+
+<%#=render :partial => 'main/tag_cloud',:locals=>{:tags=>@tags}%>
+<%=render :partial => 'main/ads'%>
+
+<script type="text/javascript">
+jQuery(function() {
+	jQuery('a.lightbox').lightBox({
+	overlayBgColor: '#FFF',
+	overlayOpacity: 0.6,
+	imageLoading: '<%=request.protocol%><%=request.host_with_port%><%=image_path 'lightbox-ico-loading.gif'%>',
+	imageBtnClose: '<%=request.protocol%><%=request.host_with_port%><%=image_path 'lightbox-btn-close.gif'%>',
+	imageBtnPrev: '<%=request.protocol%><%=request.host_with_port%><%=image_path 'lightbox-btn-prev.gif'%>',
+	imageBtnNext: '<%=request.protocol%><%=request.host_with_port%><%=image_path 'lightbox-btn-next.gif'%>',
+        imageBlank: '<%=request.protocol%><%=request.host_with_port%><%=image_path 'lightbox-blank.gif'%>',
+	containerResizeSpeed: 350
+   });
+});
+</script>

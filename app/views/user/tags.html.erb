@@ -1,0 +1,19 @@
+
+<div id="recent">
+  <%@pictures.each {|p|%>
+  <div class="thumbnail">
+    <div class="thumbnail_title">
+      <%=p.title%>
+    </div>
+    <div class="thumbnail_image">
+      <%=link_to image_tag(p.image.url(:thumb),:border=>0,:alt=>p.description), view_url(:id=>p.guid)%>
+    </div>
+  </div>
+  <%}%>
+</div>
+<div id="paginate">
+  <%= will_paginate @pictures%>
+</div>
+
+<%#=render :partial => 'main/tag_cloud',:locals=>{:tags=>@tags}%>
+<%=render :partial => 'main/ads'%>

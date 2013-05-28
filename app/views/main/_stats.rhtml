@@ -1,0 +1,15 @@
+<% content_for :stats do -%>
+  <div class="stats">
+    <%=number_with_delimiter Picture.count%> total tags
+    <%today = 24.hours.ago%>
+    <%today_pics = Picture.count(:conditions=>"created_at >= '#{today}'")%>
+    <%month = 1.month.ago%>
+    <%month_pics = Picture.count(:conditions=>"created_at >= '#{month}'")%>
+    <%if today_pics > 0%>
+      <br/><%=number_with_delimiter today_pics%> tags uploaded in the last 24 hours
+    <%end%>
+    <br/><%=number_with_delimiter month_pics%> tags uploaded in the last month
+    <br/><%=link_to "Most popular tags",:controller=>:search,:action=>:popular%>
+  </div>
+<%end -%>
+
